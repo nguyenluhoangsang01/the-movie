@@ -1,17 +1,17 @@
 import React from "react";
 // Config
-import { BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
-// Components
-import HeroImage from "./HeroImage/";
-import Grid from "./Grid";
-import Thumb from "./Thumb";
-import Spinner from "./Spinner";
-import SearchBar from "./SearchBar";
-import Button from "./Button";
+import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 // Hooks
 import { useHomeFetch } from "../hooks/useHomeFetch";
 // Images
 import NoImage from "../images/no_image.jpg";
+import Button from "./Button";
+import Grid from "./Grid";
+// Components
+import HeroImage from "./HeroImage/";
+import SearchBar from "./SearchBar";
+import Spinner from "./Spinner";
+import Thumb from "./Thumb";
 
 const Home = () => {
   const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } =
@@ -37,7 +37,7 @@ const Home = () => {
             clickable
             image={
               movie.poster_path
-                ? IMAGE_BASE_URL + BACKDROP_SIZE + movie.poster_path
+                ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
                 : NoImage
             }
             movieId={movie.id}
